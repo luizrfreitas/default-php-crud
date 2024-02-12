@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+  app:
+    tty: true
+    build:  
+      dockerfile: ./php/Dockerfile
