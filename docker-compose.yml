@@ -1,9 +1,14 @@
+version: "3"
+
 services:
-  nginx:
+  web:
     image: nginx:latest
     ports:
       - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx
   app:
+    # very important to keep the container running.
     tty: true
     build:  
       dockerfile: ./php/Dockerfile
