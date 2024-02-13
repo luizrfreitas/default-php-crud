@@ -4,11 +4,21 @@ services:
   web:
     image: nginx:latest
     ports:
-      - "80:80"
+      - 80:80
     volumes:
       - ./nginx:/etc/nginx
+    networks:
+      - application
   app:
     # very important to keep the container running.
     tty: true
     build:  
       dockerfile: ./php/Dockerfile
+    volumes:
+      - ./app:/app
+    networks:
+      - application
+
+networks:
+  application:
+    driver: bridge
