@@ -1,24 +1,25 @@
 version: "3"
 
 services:
-  web:
-    image: nginx:latest
-    ports:
-      - 80:80
-    volumes:
-      - ./nginx:/etc/nginx
-    networks:
-      - application
+  # web:
+  #   image: nginx:latest
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ./nginx:/etc/nginx
+  #   networks:
+  #     - application
   app:
     # very important to keep the container running.
     tty: true
+    container_name: "${APP_NAME}"
     build:  
       dockerfile: ./php/Dockerfile
     volumes:
-      - ./app:/app
-    networks:
-      - application
+      - ./app:/var/www/html/app
+    # networks:
+    #   - application
 
-networks:
-  application:
-    driver: bridge
+# networks:
+#   application:
+#     driver: bridge
