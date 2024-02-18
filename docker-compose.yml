@@ -1,13 +1,11 @@
 version: "3"
 
 services:
-  # web:
-  #   container_name: "${WEB_NAME}"
-  #   image: nginx:latest
-  #   ports:
-  #     - 80:80
-  #   volumes:
-  #     - ./nginx:/etc/nginx
+  web:
+    container_name: "${WEB_NAME}"
+    image: nginx:latest
+    ports:
+      - 80:80
 
   app:
     # very important to keep the container running.
