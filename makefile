@@ -14,3 +14,4 @@ laravel-create:
 	@echo "Creating example app..."
 	@docker exec -w /var/www/html $(APP_NAME) composer create-project laravel/laravel $(firstword $(ARGS))
 	@docker cp $(APP_NAME):/var/www/html/laravel ./app
+	@

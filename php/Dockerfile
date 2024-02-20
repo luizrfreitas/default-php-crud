@@ -1,23 +1,18 @@
 # I need to use a fpm image to work with the nginx, or configure one from scratch by myself.
-FROM php:8.3.3-fpm-alpine
+FROM php:8.3.3-fpm
 
 RUN docker-php-ext-install pdo pdo_mysql
 
-# RUN apt-get update && apt-get install -y \
-#     git \
-#     curl \
-#     libpng-dev \
-#     libjpeg-dev \
-#     libfreetype6-dev \
-#     libzip-dev \
-#     zip \
-#     unzip \
-#     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-#     && docker-php-ext-install gd pdo pdo_mysql zip
-    
-# COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    zip \
+    unzip \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && apt-get clean
 
-# Install Xdebug
-# RUN apt-get install php-xdebug
-
-
+COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
