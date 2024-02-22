@@ -14,10 +14,10 @@ services:
     container_name: app
     build:
       dockerfile: ./php/Dockerfile
-    volumes:
-      - ./app:/app
     ports:
       - "9000:9000"
+    volumes:
+      - ./app:/var/www/html
 
   db:
     tty: true
@@ -33,30 +33,4 @@ services:
     volumes:
       - ./db:/var/lib/mysql
 
-# version: "3"
-
-# services:
-#   web:
-#     container_name: "${WEB_NAME}"
-#     image: nginx:latest
-#     ports:
-#       - 80:80
-#     volumes:
-#       - ./web:/etc/nginx/conf.d
-#     networks:
-#       - application
-
-#   app:
-#     # very important to keep the container running.
-#     tty: true
-#     container_name: "${APP_NAME}"
-#     build:
-#       dockerfile: ./php/Dockerfile
-#     volumes:
-#       - ./app:/var/www/html
-#     networks:
-#       - application
-
-# networks:
-#   application:
-#     driver: bridge
+  # redis: TO DO
