@@ -1,19 +1,14 @@
-# laravel-crud
-A simple crud in laravel to understand the basics and try new stuff.
+# Default PHP CRUD
 
-Enviroment
-I've developed trough reading the documentation of each technology. The references can are:
+## Introduction
+Looking for a standarizing the projects in PHP, this repository wrap the essentials for a project, wrapping Composer, Nginx, and MySQL and more in one standard repository.
 
-composer - https://getcomposer.org/doc/00-intro.md
-make - https://www.gnu.org/software/make/manual/make.html
+## Installation
+Before the installation, fill swap the `example.env` with the actual `.env` file.
 
-Folder Structure
+There's currently two options of environment, development and production. The Makefile can be used to build both environments using, or `build-project-dev`, or `build-project-prod`.
 
-app
-The app folder will contain the application itself.
-
-db
-db folder should contain the data used for the database container.
-
-web
-The web container will only contain the configuration files used by the web service.
+## Supported Services
+* PHP 8.3
+* MySQL server
+* Nginx

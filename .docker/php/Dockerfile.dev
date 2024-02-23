@@ -1,4 +1,3 @@
-# I need to use a fpm image to work with the nginx, or configure one from scratch by myself.
 FROM php:8.3.3-fpm
 
 RUN docker-php-ext-install pdo pdo_mysql
@@ -15,9 +14,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && apt-get clean
 
-# RUN if [ "${ENVIRONMENT}" = "dev" ]; then \
-#         pecl install xdebug \
-#         && echo "zend_extension=xdebug" > /usr/local/etc/php/conf.d/99-xdebug.ini; \
-#     fi
+RUN pecl install xdebug \
+    && echo "zend_extension=xdebug" > /usr/local/etc/php/conf.d/99-xdebug.ini
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer

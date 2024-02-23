@@ -22,7 +22,5 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-# container configuration
-app/*
-db/*
-web/*
+# Docker configuration
+.docker/db
