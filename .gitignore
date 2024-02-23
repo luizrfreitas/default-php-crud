@@ -26,4 +26,4 @@ Homestead.json
 .docker/db
 
 # IDE
-.vscode
+.vscode/*
