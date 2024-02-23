@@ -1,14 +1,14 @@
 # Default PHP CRUD
 
 ## Introduction
-Looking for a standarizing the projects in PHP, this repository wrap the essentials for a project, wrapping Composer, Nginx, and MySQL and more in one standard repository.
+In an effort to standardize PHP projects, this repository encapsulates essential components like Composer, Nginx, MySQL, and more into one standardized repository.
 
 ## Installation
-Before the installation, fill swap the `example.env` with the actual `.env` file.
+Before proceeding with the installation, replace the `example.env` file with the actual `.env` file.
 
-There's currently two options of environment, development and production. The Makefile can be used to build both environments using, or `build-project-dev`, or `build-project-prod`.
+Currently, there are two environment options: development and production. You can use the Makefile to build both environments, either with `build-project-dev` or `build-project-prod`.
 
 ## Supported Services
 * PHP 8.3
-* MySQL server
+* MySQL Server
 * Nginx
