@@ -24,3 +24,6 @@ Homestead.json
 
 # Docker configuration
 .docker/db
+
+# IDE
+.vscode
