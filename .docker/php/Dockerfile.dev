@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && apt-get clean
 
-RUN pecl install xdebug \
-    && echo "zend_extension=xdebug" > /usr/local/etc/php/conf.d/99-xdebug.ini
+COPY ./.docker/php/xdebug/99-xdebug.ini /usr/local/etc/php/conf.d
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer

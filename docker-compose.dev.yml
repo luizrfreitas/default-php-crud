@@ -18,6 +18,8 @@ services:
       - "9000:9000"
     volumes:
       - ./app:/var/www/html/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   # db:
   #   tty: true
